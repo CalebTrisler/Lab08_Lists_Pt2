@@ -173,7 +173,7 @@ public class ListTester {
 			// Scenario: 02
 		testSingleElementList(emptyList_addToFrontA_A, "emptyList_addToFrontA_A", LIST_A, STRING_A);
 			// Scenario: 03
-
+		//TODO: add scenario
 			// Scenario: 04
 
 			// Scenario: 05
@@ -181,11 +181,11 @@ public class ListTester {
 			
 		//1-element to empty list
 			// Scenario: 12
-
+		//TODO: add scenario
 			// Scenario: 13
 
 			// Scenario: 14
-
+		//TODO: add scenario
 			// Scenario: 15
 
 			// Scenario: 44
@@ -195,9 +195,9 @@ public class ListTester {
 			// Scenario: 06
 		testTwoElementList(A_addToFrontB_BA, "A_addToFrontB_BA", LIST_BA, STRING_BA);
 			// Scenario: 07
-
+		//TODO: add scenario
 			// Scenario: 10
-
+		//TODO: add scenario
 			
 		//1-element to changed 1-element via set()
 			// Scenario: 16
@@ -211,7 +211,7 @@ public class ListTester {
 			// Scenario: 25
 
 			// Scenario: 26
-
+		//TODO: add scenario
 			// Scenario: 27
 
 			// Scenario: 28
@@ -324,8 +324,9 @@ public class ListTester {
 	 * @return [A] after addToFront(A)
 	 */
 	private IndexedUnsortedList<Integer> emptyList_addToFrontA_A() {
-		// TODO: Implement change scenario logic
-		return null;
+		IndexedUnsortedList<Integer> list = newList();
+		list.add(ELEMENT_A);
+		return list;
 	}
 	private Scenario<Integer> emptyList_addToFrontA_A = () -> emptyList_addToFrontA_A();
 
