@@ -173,7 +173,7 @@ public class ListTester {
 			// Scenario: 02
 		testSingleElementList(emptyList_addToFrontA_A, "emptyList_addToFrontA_A", LIST_A, STRING_A);
 			// Scenario: 03
-		//TODO: add scenario
+		// testSingleElementList(emptyList_addToRearA_A, "emptyList_addToRearA_A", LIST_A, STRING_A);
 			// Scenario: 04
 
 			// Scenario: 05
@@ -181,11 +181,11 @@ public class ListTester {
 			
 		//1-element to empty list
 			// Scenario: 12
-		//TODO: add scenario
+		// testEmptyList(A_removeFirst_emptyList, "A_removeFirst_emptyList");
 			// Scenario: 13
 
 			// Scenario: 14
-		//TODO: add scenario
+		testEmptyList(A_removeA_emptyList, "A_removeA_emptyList");
 			// Scenario: 15
 
 			// Scenario: 44
@@ -195,9 +195,9 @@ public class ListTester {
 			// Scenario: 06
 		testTwoElementList(A_addToFrontB_BA, "A_addToFrontB_BA", LIST_BA, STRING_BA);
 			// Scenario: 07
-		//TODO: add scenario
+		testTwoElementList(A_addToRearB_AB, "A_addToRearB_AB", LIST_AB, STRING_AB);
 			// Scenario: 10
-		//TODO: add scenario
+		// testTwoElementList(A_add0B_BA, "A_add0B_BA", LIST_BA, STRING_BA);
 			
 		//1-element to changed 1-element via set()
 			// Scenario: 16
@@ -211,7 +211,7 @@ public class ListTester {
 			// Scenario: 25
 
 			// Scenario: 26
-		//TODO: add scenario
+		testSingleElementList(AB_removeLast_A, "AB_removeLast_A", LIST_A, STRING_A);
 			// Scenario: 27
 
 			// Scenario: 28
@@ -706,6 +706,26 @@ public class ListTester {
 		System.out.printf("\nSCENARIO: %s\n\n", scenarioName);
 		try {
 			//TODO: tests for scenarios ending in a 2-element list
+
+			//TODO Annette: Lines: 96 - 102
+
+			//TODO Jenna: Lines: 103 - 109
+
+			// Joseph Lines: 110 - 116
+			printTest(scenarioName + "_testRemove" + contentsString.charAt(0), testRemoveElement(scenario.build(), contents[0], Result.MatchingValue));
+			printTest(scenarioName + "_testRemoveX", testRemoveElement(scenario.build(), ELEMENT_X, Result.NoSuchElement));
+			printTest(scenarioName + "_testRemoveNeg1", testRemoveIndex(scenario.build(), -1, null, Result.IndexOutOfBounds));
+			printTest(scenarioName + "_testRemove0", testRemoveIndex(scenario.build(), 0, contents[0], Result.MatchingValue));
+			printTest(scenarioName + "_testRemove1", testRemoveIndex(scenario.build(), 1, contents[1], Result.MatchingValue));
+			printTest(scenarioName + "_testRemove2", testRemoveIndex(scenario.build(), 2, null, Result.IndexOutOfBounds));
+			printTest(scenarioName + "_testSetNeg1", testSet(scenario.build(), -1, ELEMENT_X, Result.IndexOutOfBounds));			
+
+			//TODO Aaron: Lines: 117 - 123
+
+			//TODO Luis: Lines: 124 - 130
+
+			// TODO: Caleb: Lines 131 - 134
+
 			// IndexedUnsortedList
 
 			// Iterator
