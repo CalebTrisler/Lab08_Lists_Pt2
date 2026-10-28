@@ -173,7 +173,7 @@ public class ListTester {
 			// Scenario: 02
 		testSingleElementList(emptyList_addToFrontA_A, "emptyList_addToFrontA_A", LIST_A, STRING_A);
 			// Scenario: 03
-		// testSingleElementList(emptyList_addToRearA_A, "emptyList_addToRearA_A", LIST_A, STRING_A);
+		testSingleElementList(emptyList_addToRearA_A, "emptyList_addToRearA_A", LIST_A, STRING_A);
 			// Scenario: 04
 
 			// Scenario: 05
@@ -181,7 +181,7 @@ public class ListTester {
 			
 		//1-element to empty list
 			// Scenario: 12
-		// testEmptyList(A_removeFirst_emptyList, "A_removeFirst_emptyList");
+		testEmptyList(A_removeFirst_emptyList, "A_removeFirst_emptyList");
 			// Scenario: 13
 
 			// Scenario: 14
@@ -193,11 +193,11 @@ public class ListTester {
 
 		//1-element to 2-element
 			// Scenario: 06
-		testTwoElementList(A_addToFrontB_BA, "A_addToFrontB_BA", LIST_BA, STRING_BA);
+		
 			// Scenario: 07
 		testTwoElementList(A_addToRearB_AB, "A_addToRearB_AB", LIST_AB, STRING_AB);
 			// Scenario: 10
-		// testTwoElementList(A_add0B_BA, "A_add0B_BA", LIST_BA, STRING_BA);
+		testTwoElementList(A_add0B_BA, "A_add0B_BA", LIST_BA, STRING_BA);
 			
 		//1-element to changed 1-element via set()
 			// Scenario: 16
@@ -333,7 +333,12 @@ public class ListTester {
 	/** Scenario #03: [] -> addToRear(A) -> [A] 
 	 * @return [A] after addToRear(A)
 	 */
-
+	private IndexedUnsortedList<Integer> emptyList_addToRearA_A() {
+		IndexedUnsortedList<Integer> list = newList();
+		list.addToRear(ELEMENT_A);
+		return list;
+	}
+	private Scenario<Integer> emptyList_addToRearA_A = () -> emptyList_addToRearA_A();
 	 
 	/** Scenario #04: [] -> add(A) -> [A] 
 	 * @return [A] after add(A)
@@ -346,13 +351,8 @@ public class ListTester {
 	/** Scenario #06: [A] -> addToFront(B) -> [B,A] 
 	 * @return [B,A] after addToFront(B)
 	 */
-	private IndexedUnsortedList<Integer> A_addToFrontB_BA() {
-		IndexedUnsortedList<Integer> list = emptyList_addToFrontA_A(); 
-		list.addToFront(ELEMENT_B);
-		return list;
-	}
-	private Scenario<Integer> A_addToFrontB_BA = () -> A_addToFrontB_BA();
 
+	
 	/** Scenario #07: [A] -> addToRear(B) -> [A,B]
 	 * @return [A,B] after addToRear(B)
 	 */
@@ -366,10 +366,23 @@ public class ListTester {
 	/** Scenario #10: [A] -> add(0,B) -> [B,A]
 	 * @return [B,A] after add(0,B)
 	 */
+	private IndexedUnsortedList<Integer> A_add0B_BA() { 
+		IndexedUnsortedList<Integer> list = emptyList_addToFrontA_A();
+		list.add(0,ELEMENT_B);
+		return list;
+	}
+	private Scenario<Integer> A_add0B_BA = () -> A_add0B_BA();
 
 	/** Scenario #12: [A] -> removeFirst() -> []
 	 * @return [] after removeFirst()
 	 */
+	private IndexedUnsortedList<Integer> A_removeFirst_emptyList() {
+		IndexedUnsortedList<Integer> list = emptyList_addToFrontA_A();
+		list.removeFirst();
+		return list;
+	}
+	private Scenario<Integer> A_removeFirst_emptyList = ()  -> A_removeFirst_emptyList();
+
 
 	/** Scenario #13: [A] -> removeLast() -> [] 
 	 * @return [] after removeLast()
@@ -725,6 +738,10 @@ public class ListTester {
 			//TODO Luis: Lines: 124 - 130
 
 			// TODO: Caleb: Lines 131 - 134
+			printTest(scenarioName + "_testContainsX", testContains(scenario.build(), ELEMENT_X, Result.False));
+			printTest(scenarioName + "_testIsEmpty", testIsEmpty(scenario.build(), Result.False));
+			printTest(scenarioName + "_testSize", testSize(scenario.build(), 2));
+			printTest(scenarioName + "_testToString", testToString(scenario.build(), Result.ValidString));
 
 			// IndexedUnsortedList
 
