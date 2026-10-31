@@ -718,9 +718,9 @@ public class ListTester {
 	private void testTwoElementList(Scenario<Integer> scenario, String scenarioName, Integer[] contents, String contentsString) {
 		System.out.printf("\nSCENARIO: %s\n\n", scenarioName);
 		try {
-			//TODO: tests for scenarios ending in a 2-element list
+			// tests for scenarios ending in a 2-element list
 
-			//TODO Annette: Lines: 96 - 102
+			// Annette: Lines: 96 - 102
 			printTest(scenarioName + "_testAddToFront", testAddToFront(scenario.build(), ELEMENT_X, Result.NoException));
 			printTest(scenarioName + "_testAddToRear", testAddToRear(scenario.build(), ELEMENT_X, Result.NoException));
 			printTest(scenarioName + "_testAddAfterFirst", testAddAfter(scenario.build(), contents[0], ELEMENT_X, Result.NoException));
@@ -729,7 +729,7 @@ public class ListTester {
 			printTest(scenarioName + "_testAddX", testAdd(scenario.build(), ELEMENT_X, Result.NoException));
 			printTest(scenarioName + "_testAddAtIndexNeg1", testAddAtIndex(scenario.build(), -1, ELEMENT_X, Result.IndexOutOfBounds));
 
-			//TODO Jenna: Lines: 103 - 109
+			// Jenna: Lines: 103 - 109
 			printTest(scenarioName + "_testAddAtIndex0",
 			testAddAtIndex(scenario.build(), 0, ELEMENT_X, Result.NoException));
 			printTest(scenarioName + "_testAddAtIndex1", testAddAtIndex(scenario.build(), 1, ELEMENT_X, Result.NoException));
@@ -748,7 +748,7 @@ public class ListTester {
 			printTest(scenarioName + "_testRemove2", testRemoveIndex(scenario.build(), 2, null, Result.IndexOutOfBounds));
 			printTest(scenarioName + "_testSetNeg1", testSet(scenario.build(), -1, ELEMENT_X, Result.IndexOutOfBounds));			
 
-			//TODO Aaron: Lines: 117 - 123
+			// Aaron: Lines: 117 - 123
 			printTest(scenarioName + "_testSet0", testSet(scenario.build(), 0, ELEMENT_X, Result.NoException));
 			printTest(scenarioName + "_testSet1", testSet(scenario.build(), 1, ELEMENT_X, Result.NoException));
 			printTest(scenarioName + "_testSet2", testSet(scenario.build(), 2, ELEMENT_X, Result.IndexOutOfBounds));
@@ -757,7 +757,7 @@ public class ListTester {
 			printTest(scenarioName + "_testGet1", testGet(scenario.build(), 1, contents[1], Result.MatchingValue));
 			printTest(scenarioName + "_testGet2", testGet(scenario.build(), 2, null, Result.IndexOutOfBounds));
 
-			//TODO Luis: Lines: 124 - 130
+			// Luis: Lines: 124 - 130
 			printTest(scenarioName+"_testIndexof" + contents[0], testIndexOf(scenario.build(), contents[0], 0));
 			printTest(scenarioName+"_testIndexOf" + contents[1], testIndexOf(scenario.build(), contents[1], 1));
 			printTest(scenarioName+"_testIndexOfX", testIndexOf(scenario.build(), ELEMENT_X, -1));
@@ -767,7 +767,7 @@ public class ListTester {
 			printTest(scenarioName+"_testContains" + contents[1], testContains(scenario.build(), contents[1], Result.True));
 
 
-			// TODO: Caleb: Lines 131 - 134
+			// Caleb: Lines 131 - 134
 			printTest(scenarioName + "_testContainsX", testContains(scenario.build(), ELEMENT_X, Result.False));
 			printTest(scenarioName + "_testIsEmpty", testIsEmpty(scenario.build(), Result.False));
 			printTest(scenarioName + "_testSize", testSize(scenario.build(), 2));
