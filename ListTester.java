@@ -750,6 +750,14 @@ public class ListTester {
 			printTest(scenarioName + "_testGet2", testGet(scenario.build(), 2, null, Result.IndexOutOfBounds));
 
 			//TODO Luis: Lines: 124 - 130
+			printTest(scenarioName+"_testIndexofA", testIndexOf(scenario.build(), ELEMENT_A, 0));
+			printTest(scenarioName+"_testIndexOfB", testIndexOf(scenario.build(), ELEMENT_B, 1));
+			printTest(scenarioName+"_testIndexOfX", testIndexOf(scenario.build(), ELEMENT_X, -1));
+			printTest(scenarioName+"_testFirst", testFirst(scenario.build(), ELEMENT_B, Result.MatchingValue));
+			printTest(scenarioName+"_testLast", testLast(scenario.build(), ELEMENT_A, Result.MatchingValue));
+			printTest(scenarioName+"_testContainsA", testContains(scenario.build(), ELEMENT_A, Result.True));
+			printTest(scenarioName+"_testContainsB", testContains(scenario.build(), ELEMENT_B, Result.True));
+
 
 			// TODO: Caleb: Lines 131 - 134
 			printTest(scenarioName + "_testContainsX", testContains(scenario.build(), ELEMENT_X, Result.False));
